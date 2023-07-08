@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<p>test</p>
+<p>{{ listing.title }}</p>
+<p>test</p>
+
+
+{% for key, value in listing.items %}
+    <p>{{ key }}: {{ value }}</p>
+{% endfor %}
+
+{% endblock %}

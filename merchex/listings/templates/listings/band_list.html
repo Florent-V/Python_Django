@@ -2,13 +2,13 @@
 
 {% block content %}
 
-  <h1>Hello Django !</h1>
+  <h1>Mes Groupes !</h1>
   <!-- TODO : liste des groupes -->
   <p>J'ai {{ bands|length }} groupes préférés.</p>
   <p>Mes groupes préférés sont :</p>
   <ul>
     {% for band in bands %}
-    <li>{{ band.name|upper }}</li>
+    <li><a href="{% url 'band_detail' band.id %}">{{ band.name }}</a></li>
     {% endfor %}
   </ul>
 

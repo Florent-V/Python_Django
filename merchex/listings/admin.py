@@ -8,7 +8,7 @@ class BandAdmin(admin.ModelAdmin):
   search_fields = ('name', 'genre', 'year_formed', 'active')
 
 class ListingAdmin(admin.ModelAdmin):
-  list_display = ('title', 'year', 'price', 'sold', 'type')
+  list_display = ('title', 'band', 'year', 'price', 'sold', 'type')
   list_filter = ('year', 'price', 'sold')
   search_fields = ('title', 'year', 'price', 'sold')
 

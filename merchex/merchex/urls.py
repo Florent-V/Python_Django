@@ -17,11 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from listings import views
+from django.conf import settings
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', views.hello),
+    path('bands/', views.band_list, name='band_list'),
+    path('bands/<int:band_id>/', views.band_detail, name='band_detail'),
     path('about-us/', views.about),
     path('contact-us/', views.contact),
-    path('listing/', views.listing),
+    path('listings/', views.listing_list, name='listing_list'),
+    path('listings/<int:listing_id>/', views.listing_detail, name='listing_detail'),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
