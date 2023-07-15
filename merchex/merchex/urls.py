@@ -24,10 +24,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bands/', views.band_list, name='band_list'),
     path('bands/<int:band_id>/', views.band_detail, name='band_detail'),
-    path('about-us/', views.about),
-    path('contact-us/', views.contact),
+    path('bands/add/', views.band_create, name='band_create'),
+    path('bands/<int:band_id>/edit/', views.band_edit, name='band_edit'),
+    path('bands/<int:band_id>/delete/', views.band_delete, name='band_delete'),
+    path('about-us/', views.about, name='about_us'),
+    path('contact-us/', views.contact, name='contact'),
+    path('email-confirm/', views.emailConfirm, name='email_sent'),
     path('listings/', views.listing_list, name='listing_list'),
     path('listings/<int:listing_id>/', views.listing_detail, name='listing_detail'),
+    path('listings/add/', views.listing_create, name='listing_create'),
+    path('listings/<int:listing_id>/edit/', views.listing_edit, name='listing_edit'),
+    path('listings/<int:listing_id>/delete/', views.listing_delete, name='listing_delete'),
 ]
 
 if settings.DEBUG:

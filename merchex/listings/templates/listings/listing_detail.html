@@ -11,4 +11,8 @@
     <p>{{ key }}: {{ value }}</p>
 {% endfor %}
 
+<a href="{% url 'listing_edit' listing.id %}">Modifier l'annonce</a>
+<a href="{% url 'listing_delete' listing.id %}">Supprimer l'annonce</a>
+<a href="{% url 'listing_list' %}">Retour à la liste des annonces</a>
+
 {% endblock %}

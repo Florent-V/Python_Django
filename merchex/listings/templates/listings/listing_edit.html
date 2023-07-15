@@ -1,0 +1,16 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<!-- formulaire création band -->
+<h1>Mise à jour de l'annonce</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer">
+
+</form>
+
+<a href="{% url 'listing_delete' %}">Supprimer l'annonce</a>
+
+{% endblock %}

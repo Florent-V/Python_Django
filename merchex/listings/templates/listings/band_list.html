@@ -3,12 +3,17 @@
 {% block content %}
 
   <h1>Mes Groupes !</h1>
+  <a href="{% url 'band_create' %}">Créer un nouveau groupe</a>
   <!-- TODO : liste des groupes -->
   <p>J'ai {{ bands|length }} groupes préférés.</p>
   <p>Mes groupes préférés sont :</p>
   <ul>
     {% for band in bands %}
-    <li><a href="{% url 'band_detail' band.id %}">{{ band.name }}</a></li>
+      <li>
+        <a href="{% url 'band_detail' band.id %}">{{ band.name }}</a> -
+        <a href="{% url 'band_edit' band.id %}">Edit</a>
+        <a href="{% url 'band_delete' band.id %}">Supprimer</a>
+      </li>
     {% endfor %}
   </ul>
 

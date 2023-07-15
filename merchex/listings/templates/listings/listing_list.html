@@ -5,7 +5,11 @@
         <p>Liste des annonces :</p>
         <ul>
             {% for listing in listings %}
-            <li><a href="{% url 'listing_detail' listing.id %}">{{ listing.title }}</a></li>
+            <li>
+              <a href="{% url 'listing_detail' listing.id %}">{{ listing.title }}</a>
+              <a href="{% url 'listing_edit' listing.id %}">Edit</a>
+              <a href="{% url 'listing_delete' listing.id %}">Supprimer</a>
+            </li>
             {% endfor %}
         </ul>
   
